@@ -17,10 +17,10 @@ export default function DashboardPage() {
         <div className="bg-white p-6 rounded-xl border border-[#D9E2DC] shadow-sm">
           <div className="flex justify-between items-start mb-4">
             <FileText className="h-8 w-8 text-[#12372A]" />
-            <span className="text-xs font-bold text-[#E67700] bg-[#F5F1E8] px-2 py-1 rounded">Under Review</span>
+            <span className="text-xs font-bold text-[#E67700] bg-[#F5F1E8] px-2 py-1 rounded">Accepted - Awaiting Print</span>
           </div>
           <h3 className="font-bold mb-1">Manuscript v1.0.2</h3>
-          <p className="text-xs text-[#5B6472]">Final draft submitted for internal review.</p>
+          <p className="text-xs text-[#5B6472]">Final accepted manuscript awaiting final publication.</p>
         </div>
         <div className="bg-white p-6 rounded-xl border border-[#D9E2DC] shadow-sm">
           <div className="flex justify-between items-start mb-4">

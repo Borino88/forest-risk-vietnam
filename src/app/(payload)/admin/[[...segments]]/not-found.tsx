@@ -4,7 +4,7 @@ import config from '@/payload.config'
 
 type Args = {
   params: Promise<{
-    payload: string[]
+    segments: string[]
   }>
   searchParams: Promise<{
     [key: string]: string | string[]
