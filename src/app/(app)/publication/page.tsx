@@ -1,3 +1,5 @@
+'use client'
+
 import { Database, Download, FileText, Quote, User } from 'lucide-react'
 
 export default function PublicationPage() {
