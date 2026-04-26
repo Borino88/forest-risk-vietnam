@@ -1,26 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-green: #12372A;
+  --secondary-green: #2D6A4F;
+  --accent-green: #52B788;
+  --earth-bg: #F5F1E8;
+  --off-white: #FAFAF7;
+  --dark-text: #1F2933;
+  --muted-text: #5B6472;
+  --border-color: #D9E2DC;
+  
+  --risk-high: #B42318;
+  --risk-medium: #E67700;
+  --risk-low: #2F9E44;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-[#FAFAF7] text-[#1F2933];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-[#12372A];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-forest { background-color: var(--primary-green); }
+.text-forest { color: var(--primary-green); }
+.border-forest { border-color: var(--primary-green); }
+
+.btn-primary {
+  @apply bg-[#12372A] text-white px-6 py-2 rounded-md hover:bg-[#2D6A4F] transition-colors font-medium;
+}
+
+.btn-secondary {
+  @apply border-2 border-[#12372A] text-[#12372A] px-6 py-2 rounded-md hover:bg-[#F5F1E8] transition-colors font-medium;
 }
