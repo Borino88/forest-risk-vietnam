@@ -1,4 +1,4 @@
-import { Download, FileText, Quote, User } from 'lucide-react'
+import { Database, Download, FileText, Quote, User } from 'lucide-react'
 
 export default function PublicationPage() {
   return (
