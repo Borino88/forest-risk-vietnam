@@ -1,40 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --primary-green: #12372A;
-  --secondary-green: #2D6A4F;
-  --accent-green: #52B788;
-  --earth-bg: #F5F1E8;
-  --off-white: #FAFAF7;
-  --dark-text: #1F2933;
-  --muted-text: #5B6472;
-  --border-color: #D9E2DC;
+@theme {
+  --color-forest: #12372A;
+  --color-secondary-green: #2D6A4F;
+  --color-accent-green: #52B788;
+  --color-earth-bg: #F5F1E8;
+  --color-off-white: #FAFAF7;
+  --color-dark-text: #1F2933;
+  --color-muted-text: #5B6472;
+  --color-border-color: #D9E2DC;
   
-  --risk-high: #B42318;
-  --risk-medium: #E67700;
-  --risk-low: #2F9E44;
+  --color-risk-high: #B42318;
+  --color-risk-medium: #E67700;
+  --color-risk-low: #2F9E44;
+
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-[#FAFAF7] text-[#1F2933];
+    @apply bg-off-white text-dark-text;
+    font-family: var(--font-sans);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold text-[#12372A];
+    @apply font-bold text-forest;
+    font-family: var(--font-serif);
   }
 }
 
-.bg-forest { background-color: var(--primary-green); }
-.text-forest { color: var(--primary-green); }
-.border-forest { border-color: var(--primary-green); }
-
 .btn-primary {
-  @apply bg-[#12372A] text-white px-6 py-2 rounded-md hover:bg-[#2D6A4F] transition-colors font-medium;
+  @apply bg-forest text-white px-6 py-2 rounded-md hover:bg-secondary-green transition-colors font-medium;
 }
 
 .btn-secondary {
-  @apply border-2 border-[#12372A] text-[#12372A] px-6 py-2 rounded-md hover:bg-[#F5F1E8] transition-colors font-medium;
+  @apply border-2 border-forest text-forest px-6 py-2 rounded-md hover:bg-earth-bg transition-colors font-medium;
 }
