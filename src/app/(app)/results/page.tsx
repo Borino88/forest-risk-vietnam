@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { BarChart3, ChevronRight, FileText, PieChart } from 'lucide-react'
 
 export default function ResultsPage() {

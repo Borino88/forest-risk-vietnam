@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Globe, Map, Target, TrendingUp } from 'lucide-react'
 
 export default function ProjectPage() {

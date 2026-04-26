@@ -1,4 +1,5 @@
-import { Linkedin, Mail } from 'lucide-react'
+import Link from 'next/link'
+import { Globe, Mail } from 'lucide-react'
 
 export default function TeamPage() {
   const team = [
@@ -52,7 +53,7 @@ export default function TeamPage() {
               <div className="text-xs text-[#5B6472] mb-6 font-medium">{m.affiliation}</div>
               <div className="flex gap-4">
                 <Mail className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
-                <Linkedin className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
+                <Globe className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
               </div>
             </div>
           ))}
@@ -63,9 +64,9 @@ export default function TeamPage() {
           <p className="text-[#D9E2DC] max-w-2xl mx-auto mb-8">
             We are always looking for academic collaborators, dataset contributors, and students interested in environmental AI.
           </p>
-          <a href="/contact" className="bg-[#52B788] text-[#12372A] px-8 py-3 rounded-md font-bold hover:bg-white transition-all inline-block">
+          <Link href="/contact" className="bg-[#52B788] text-[#12372A] px-8 py-3 rounded-md font-bold hover:bg-white transition-all inline-block">
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </div>
