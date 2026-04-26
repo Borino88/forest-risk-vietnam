@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Forest Risk Vietnam Platform
 
-## Getting Started
+An Interpretable Machine Learning Pipeline for Deforestation Risk Prediction in Vietnam at 1 km Resolution.
 
-First, run the development server:
+## Project Overview
+This platform is a real academic geospatial research portal developed for a pilot study in Gia Lai Province, Vietnam. It integrates multi-source satellite data (Hansen, GFW, Sentinel-2) and terrain/infrastructure data (SRTM, OSM) to predict deforestation probability.
 
+### Key Features
+- **Public Research Portal:** Transparent explanation of methodology, datasets, and results.
+- **Interactive Map:** High-performance GIS visualization using MapLibre GL JS.
+- **Academic Dashboard:** Secure area for researchers to manage notes, downloads, and private layers.
+- **Production CMS:** Powered by Payload CMS for managing all research assets.
+
+## Tech Stack
+- **Frontend:** Next.js 15 (App Router)
+- **CMS:** Payload CMS 3.0
+- **Database:** PostgreSQL
+- **Maps:** MapLibre GL JS
+- **Styling:** Tailwind CSS
+- **Deployment:** GitHub + Railway
+
+## Local Development
+
+### Prerequisites
+- Node.js 20+
+- PostgreSQL database
+
+### Installation
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   # Update DATABASE_URL and PAYLOAD_SECRET
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Seeding Initial Data
+To populate the CMS with initial academic content:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run seed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment to Railway
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a new project on Railway.
+2. Connect your GitHub repository.
+3. Provision a PostgreSQL database on Railway.
+4. Add the following Environment Variables:
+   - `DATABASE_URL` (From Railway Postgres)
+   - `PAYLOAD_SECRET` (Random string)
+   - `NEXT_PUBLIC_SERVER_URL` (Railway App URL)
+   - `NEXT_PUBLIC_SITE_URL` (Railway App URL)
+5. Deploy.
+6. Connect your purchased domain in the Railway Settings.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Academic Positioning
+This platform currently presents a pilot implementation for K’Bang and Mang Yang districts in Gia Lai Province. The methodology is designed to be scalable to larger regions, but current model outputs should be interpreted within the pilot study area.
 
-## Learn More
+## Future Expansion
+- National-scale satellite extraction pipeline.
+- Inclusion of rainfall and population density features.
+- Near-real-time alert window optimization.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2026 Environmental AI Research Group | Gia Lai Province Pilot
