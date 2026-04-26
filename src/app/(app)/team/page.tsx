@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from 'lucide-react'
+import { Linkedin as LinkedinIcon, Mail } from 'lucide-react'
 
 export default function TeamPage() {
   const team = [
@@ -52,7 +52,7 @@ export default function TeamPage() {
               <div className="text-xs text-[#5B6472] mb-6 font-medium">{m.affiliation}</div>
               <div className="flex gap-4">
                 <Mail className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
-                <Linkedin className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
+                <LinkedinIcon className="h-5 w-5 text-[#12372A] hover:text-[#52B788] cursor-pointer" />
               </div>
             </div>
           ))}
