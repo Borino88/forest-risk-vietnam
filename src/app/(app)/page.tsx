@@ -1,143 +1,138 @@
 import Link from 'next/link'
-import { ArrowRight, BarChart3, Globe, Database, ShieldAlert, Users, Layers } from 'lucide-react'
+import { ArrowRight, BarChart3, Globe, Database, ShieldAlert, Users, Layers, AlertCircle } from 'lucide-react'
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#12372A] py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative bg-[#12372A] py-24 lg:py-36 overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000')] bg-cover bg-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:w-2/3">
-            <span className="inline-block py-1 px-3 rounded-full bg-[#52B788] text-[#12372A] text-xs font-bold uppercase tracking-wider mb-6">
-              Pilot Study: Gia Lai Province
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-              Interpretable AI for Deforestation Risk Prediction in Vietnam
+          <div className="lg:w-3/4">
+            <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#52B788]/20 border border-[#52B788]/30 text-[#52B788] text-xs font-bold uppercase tracking-widest mb-8">
+              <span className="h-2 w-2 rounded-full bg-[#52B788] animate-pulse"></span>
+              Gia Lai Pilot Implementation
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white mb-8 leading-tight">
+              An Interpretable Pipeline for Deforestation Risk
             </h1>
-            <p className="text-xl text-[#D9E2DC] mb-10 leading-relaxed max-w-2xl">
-              A research-driven geospatial platform using satellite data, public environmental datasets, and machine learning to identify deforestation risk and warning zones.
+            <p className="text-xl lg:text-2xl text-[#D9E2DC] mb-12 leading-relaxed max-w-3xl font-light">
+              Advancing proactive forest conservation in Vietnam through multi-source satellite data and interpretable machine learning at 1 km resolution.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/map" className="bg-[#52B788] text-[#12372A] px-8 py-3 rounded-md font-bold hover:bg-white transition-all flex items-center gap-2">
-                Explore Interactive Map <ArrowRight className="h-5 w-5" />
+            <div className="flex flex-wrap gap-5">
+              <Link href="/map" className="bg-[#52B788] text-[#12372A] px-10 py-4 rounded-xl font-bold hover:bg-white transition-all flex items-center gap-3 no-underline shadow-xl shadow-[#52B788]/10">
+                Explore Risk Map <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link href="/methodology" className="border-2 border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-[#12372A] transition-all">
-                Read Methodology
+              <Link href="/publication" className="bg-white/5 border border-white/20 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition-all no-underline">
+                View Publication
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Stats / Features */}
-      <section className="py-16 bg-[#F5F1E8]">
+      {/* Pilot Scope Banner */}
+      <section className="bg-[#B42318] py-4 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-3 text-sm font-bold tracking-wide">
+          <AlertCircle className="h-5 w-5" />
+          <span>CURRENT SCOPE: PILOT IMPLEMENTATION FOR K’BANG & MANG YANG DISTRICTS</span>
+        </div>
+      </section>
+
+      {/* Core Features */}
+      <section className="py-24 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-[#D9E2DC]">
-              <Globe className="h-10 w-10 text-[#12372A] mb-4" />
-              <h3 className="text-lg font-bold mb-2">Study Area</h3>
-              <p className="text-sm text-[#5B6472]">Gia Lai Pilot: K’Bang and Mang Yang districts.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-[#D9E2DC]">
-              <Layers className="h-10 w-10 text-[#12372A] mb-4" />
-              <h3 className="text-lg font-bold mb-2">Resolution</h3>
-              <p className="text-sm text-[#5B6472]">1 km spatial risk grid using multi-source data.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-[#D9E2DC]">
-              <BarChart3 className="h-10 w-10 text-[#12372A] mb-4" />
-              <h3 className="text-lg font-bold mb-2">ML Models</h3>
-              <p className="text-sm text-[#5B6472]">Baseline, Logistic Regression, and Random Forest.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-[#D9E2DC]">
-              <ShieldAlert className="h-10 w-10 text-[#12372A] mb-4" />
-              <h3 className="text-lg font-bold mb-2">Outputs</h3>
-              <p className="text-sm text-[#5B6472]">Actionable risk maps and warning-zone layers.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How it Works */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif font-bold mb-4">Pipeline Workflow</h2>
-            <div className="h-1 w-20 bg-[#52B788] mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {[
-              { step: '01', title: 'Data Collection', desc: 'Sourcing Hansen GFC, GFW Alerts, Sentinel-2, and SRTM from GEE.' },
-              { step: '02', title: 'Feature Engineering', desc: 'Processing spectral indices, terrain, and road distance features.' },
-              { step: '03', title: 'Model Training', desc: 'Training interpretable models on historical forest loss labels.' },
-              { step: '04', title: 'Risk Mapping', desc: 'Generating spatial probability maps and thresholded warning zones.' }
-            ].map((item, idx) => (
-              <div key={idx} className="relative group text-center">
-                <div className="text-6xl font-serif font-black text-[#F5F1E8] mb-[-2rem] group-hover:text-[#D9E2DC] transition-colors">{item.step}</div>
-                <h3 className="text-xl font-bold mb-4 relative z-10">{item.title}</h3>
-                <p className="text-[#5B6472] relative z-10">{item.desc}</p>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#D9E2DC] group hover:border-[#52B788] transition-colors">
+              <div className="h-14 w-14 rounded-2xl bg-[#F5F1E8] flex items-center justify-center text-[#12372A] mb-6 group-hover:bg-[#12372A] group-hover:text-white transition-all">
+                <Globe className="h-7 w-7" />
               </div>
-            ))}
+              <h3 className="text-lg font-bold mb-3">Study Area</h3>
+              <p className="text-sm text-[#5B6472] leading-relaxed">Gia Lai Pilot: Spatial focus on K’Bang and Mang Yang districts.</p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#D9E2DC] group hover:border-[#52B788] transition-colors">
+              <div className="h-14 w-14 rounded-2xl bg-[#F5F1E8] flex items-center justify-center text-[#12372A] mb-6 group-hover:bg-[#12372A] group-hover:text-white transition-all">
+                <Layers className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">1 km Resolution</h3>
+              <p className="text-sm text-[#5B6472] leading-relaxed">Harmonized grid integration for district-scale monitoring.</p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#D9E2DC] group hover:border-[#52B788] transition-colors">
+              <div className="h-14 w-14 rounded-2xl bg-[#F5F1E8] flex items-center justify-center text-[#12372A] mb-6 group-hover:bg-[#12372A] group-hover:text-white transition-all">
+                <BarChart3 className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Interpretable AI</h3>
+              <p className="text-sm text-[#5B6472] leading-relaxed">Prioritizing models that reveal the drivers of forest risk.</p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#D9E2DC] group hover:border-[#52B788] transition-colors">
+              <div className="h-14 w-14 rounded-2xl bg-[#F5F1E8] flex items-center justify-center text-[#12372A] mb-6 group-hover:bg-[#12372A] group-hover:text-white transition-all">
+                <ShieldAlert className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Warning Zones</h3>
+              <p className="text-sm text-[#5B6472] leading-relaxed">Statistically derived hotspots for conservation prioritization.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Data Transparency */}
-      <section className="py-24 bg-[#12372A] text-white">
+      {/* Model Transparency Section */}
+      <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-serif font-bold mb-6">Open Science & Public Data</h2>
-              <p className="text-lg text-[#D9E2DC] mb-8 leading-relaxed">
-                Our pipeline relies on transparent, publicly available datasets to ensure accountability and reproducibility in forest monitoring.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <div className="absolute -top-12 -left-12 w-48 h-48 bg-[#52B788] opacity-5 rounded-full"></div>
+              <h2 className="text-4xl font-serif font-bold mb-8 text-[#12372A] relative z-10">Scalable & Reproducible Monitoring</h2>
+              <p className="text-lg text-[#5B6472] mb-10 leading-relaxed relative z-10 text-justify">
+                Our platform integrates multi-source public datasets (Hansen GFC, GFW, Sentinel-2, SRTM) to ensure that forest risk predictions are both scientifically robust and transparent.
               </p>
-              <div className="space-y-4">
-                {[
-                  { name: 'Hansen Global Forest Change', source: 'UMD / Google Earth Engine' },
-                  { name: 'GFW Integrated Alerts', source: 'Global Forest Watch' },
-                  { name: 'Sentinel-2 Spectral Data', source: 'European Space Agency' },
-                  { name: 'OpenStreetMap Infrastructure', source: 'OSM Contributors' }
-                ].map((d, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-[#2D6A4F] p-4 rounded-lg">
-                    <Database className="h-6 w-6 text-[#52B788]" />
-                    <div>
-                      <div className="font-bold">{d.name}</div>
-                      <div className="text-xs text-[#D9E2DC]">{d.source}</div>
-                    </div>
+              <div className="space-y-6 relative z-10">
+                <div className="flex items-center gap-5 p-6 bg-[#FAFAF7] rounded-2xl border border-[#D9E2DC]">
+                  <div className="bg-white p-3 rounded-xl shadow-sm"><Database className="h-6 w-6 text-[#12372A]" /></div>
+                  <div>
+                    <div className="font-bold text-[#12372A]">Public Data Architecture</div>
+                    <div className="text-xs text-[#5B6472]">Built on Google Earth Engine (GEE) open-source pipelines.</div>
                   </div>
-                ))}
+                </div>
+                <div className="flex items-center gap-5 p-6 bg-[#FAFAF7] rounded-2xl border border-[#D9E2DC]">
+                  <div className="bg-white p-3 rounded-xl shadow-sm"><Layers className="h-6 w-6 text-[#12372A]" /></div>
+                  <div>
+                    <div className="font-bold text-[#12372A]">Multispectral Features</div>
+                    <div className="text-xs text-[#5B6472]">Incorporating NDVI, NBR, and road-distance accessibility factors.</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="bg-[#F5F1E8] p-8 rounded-2xl border border-[#D9E2DC] text-[#12372A]">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <BarChart3 className="h-8 w-8" />
-                Model Performance
+
+            <div className="bg-[#12372A] p-10 lg:p-14 rounded-[3rem] text-white shadow-2xl relative">
+              <div className="absolute top-0 right-0 p-8 opacity-10"><BarChart3 className="h-32 w-32" /></div>
+              <h3 className="text-2xl font-bold mb-10 flex items-center gap-3">
+                <BarChart3 className="h-8 w-8 text-[#52B788]" />
+                Model Validation
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-bold">Random Forest AUC</span>
-                    <span className="text-[#2F9E44]">0.92</span>
+                  <div className="flex justify-between mb-3 items-end">
+                    <span className="font-bold text-sm uppercase tracking-widest text-[#D9E2DC]">Random Forest (RF)</span>
+                    <span className="text-2xl font-serif font-bold text-[#52B788]">0.892 AUC</span>
                   </div>
-                  <div className="w-full bg-[#D9E2DC] h-3 rounded-full overflow-hidden">
-                    <div className="bg-[#52B788] h-full" style={{ width: '92%' }}></div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#52B788] h-full" style={{ width: '89.2%' }}></div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-bold">Logistic Regression AUC</span>
-                    <span className="text-[#2F9E44]">0.88</span>
+                  <div className="flex justify-between mb-3 items-end">
+                    <span className="font-bold text-sm uppercase tracking-widest text-[#D9E2DC]">Logistic Regression</span>
+                    <span className="text-2xl font-serif font-bold text-[#52B788]">0.788 AUC</span>
                   </div>
-                  <div className="w-full bg-[#D9E2DC] h-3 rounded-full overflow-hidden">
-                    <div className="bg-[#52B788] h-full" style={{ width: '88%' }}></div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#52B788] h-full" style={{ width: '78.8%' }}></div>
                   </div>
                 </div>
-                <div className="pt-4 border-t border-[#D9E2DC]">
-                  <p className="text-sm text-[#5B6472]">
-                    Performance verified through cross-district validation and historical capture rates.
+                <div className="pt-8 border-t border-white/10 mt-8">
+                  <p className="text-sm text-[#D9E2DC] leading-relaxed italic">
+                    "Validated across 1 km² grid cells in Gia Lai Province using a 30% hold-out test split (2023)."
                   </p>
                 </div>
               </div>
@@ -147,16 +142,22 @@ export default function Home() {
       </section>
 
       {/* Team CTA */}
-      <section className="py-24 bg-white border-b border-[#D9E2DC]">
+      <section className="py-24 bg-[#FAFAF7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Users className="h-16 w-16 text-[#12372A] mx-auto mb-6" />
-          <h2 className="text-3xl font-serif font-bold mb-4">Developed by Environmental AI Researchers</h2>
-          <p className="text-xl text-[#5B6472] mb-10 max-w-2xl mx-auto">
-            A collaborative effort to bring state-of-the-art machine learning to transparent forest management in Vietnam.
+          <div className="h-20 w-20 rounded-3xl bg-white border border-[#D9E2DC] flex items-center justify-center mx-auto mb-8 shadow-sm">
+            <Users className="h-10 w-10 text-[#12372A]" />
+          </div>
+          <h2 className="text-4xl font-serif font-bold mb-6 text-[#12372A]">Academic Collaboration</h2>
+          <p className="text-xl text-[#5B6472] mb-12 max-w-3xl mx-auto leading-relaxed">
+            A research effort by students from The Olympia School, Vinschool, and Foreign Language Specialized School, supervised by experts from FPT University.
           </p>
-          <div className="flex justify-center gap-4">
-            <Link href="/team" className="btn-primary">Meet the Team</Link>
-            <Link href="/publication" className="btn-secondary">View Publication</Link>
+          <div className="flex flex-wrap justify-center gap-5">
+            <Link href="/results" className="bg-[#12372A] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#2D6A4F] transition-all no-underline shadow-lg shadow-[#12372A]/10">
+              View Detailed Results
+            </Link>
+            <Link href="/publication" className="bg-white border-2 border-[#12372A] text-[#12372A] px-10 py-4 rounded-xl font-bold hover:bg-[#F5F1E8] transition-all no-underline">
+              Publication Details
+            </Link>
           </div>
         </div>
       </section>
