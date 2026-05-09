@@ -77,6 +77,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://deforestation.xyz',
   },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
@@ -86,9 +90,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className="bg-[#FAFAF7] text-[#1F2933] font-sans antialiased selection:bg-[#52B788] selection:text-[#12372A]">
         <Navbar />
         <main className="min-h-screen">{children}</main>
