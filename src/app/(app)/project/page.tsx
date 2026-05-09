@@ -1,114 +1,104 @@
 import Link from 'next/link'
-import { Globe, Map, Target, TrendingUp } from 'lucide-react'
+import { Globe, Map, Target, ShieldCheck, Microscope } from 'lucide-react'
 
 export const metadata = {
-  title: 'Project Scope',
-  description: 'Understanding the scope and objectives of the deforestation risk prediction pilot study in Gia Lai Province, Vietnam.',
+  title: 'Project Scope & Scientific Context',
+  description: 'Grounded research into deforestation risk modeling within the Central Highlands of Vietnam, focusing on the Gia Lai pilot study area.',
 }
 
 export default function ProjectPage() {
   return (
     <article className="bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <header className="mb-16">
-          <h1 className="text-4xl font-serif font-bold mb-6 text-[#12372A]">About the Research Project</h1>
-          <p className="text-xl text-[#5B6472] max-w-3xl leading-relaxed">
-            Understanding deforestation dynamics in Vietnam requires transparent, high-resolution risk assessment tools that bridge the gap between raw satellite data and actionable policy insights.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <header className="mb-16 border-b border-[#F5F1E8] pb-12">
+          <div className="inline-flex items-center gap-2 text-[#52B788] font-bold uppercase tracking-[0.2em] text-[10px] mb-4">
+            Research Scope
+          </div>
+          <h1 className="text-4xl font-serif font-bold mb-6 text-[#12372A]">Project Objectives & Scientific Context</h1>
+          <p className="text-lg text-[#5B6472] max-w-4xl leading-relaxed italic">
+            "Developing high-resolution spatial intelligence to transition forest monitoring from retrospective detection to proactive risk prediction."
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
-          <section aria-labelledby="the-problem">
-            <h2 id="the-problem" className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
-              <Target className="h-8 w-8 text-[#52B788]" aria-hidden="true" />
-              The Problem Context
-            </h2>
-            <div className="prose prose-forest text-[#5B6472]">
-              <p className="mb-4 leading-relaxed">
-                Rapid land-use changes in Vietnam's central highlands pose significant threats to biodiversity and carbon sequestration. Traditional remote sensing monitoring often focuses on detecting forest loss only after it has already happened.
-              </p>
-              <p className="leading-relaxed">
-                Our research shifts the paradigm toward proactive risk prediction, identifying geographical areas under pressure before significant forest degradation occurs. This predictive approach enables better allocation of limited conservation resources and more effective policy interventions.
-              </p>
-            </div>
-          </section>
-          
-          <section aria-labelledby="why-gia-lai">
-            <h2 id="why-gia-lai" className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
-              <Globe className="h-8 w-8 text-[#52B788]" aria-hidden="true" />
-              Pilot Study: Gia Lai Province
-            </h2>
-            <div className="prose prose-forest text-[#5B6472]">
-              <p className="mb-4 leading-relaxed">
-                Gia Lai Province represents a critical intersection of primary forest reserves, plantation expansion, and infrastructure development. The K’Bang and Mang Yang districts were specifically selected as pilot areas due to their diverse forest typologies and historically documented loss patterns.
-              </p>
-              <p className="leading-relaxed">
-                Serving as an empirical pilot site, Gia Lai provides the necessary environmental variability and historical ground-truth data to rigorously test, validate, and refine our interpretable machine learning pipeline.
-              </p>
-            </div>
-          </section>
-        </div>
-
-        {/* Scope Section */}
-        <section className="bg-[#FAFAF7] rounded-3xl p-8 lg:p-12 mb-20 border border-[#D9E2DC]" aria-labelledby="project-scope">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 id="project-scope" className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
-                <Map className="h-8 w-8 text-[#52B788]" aria-hidden="true" />
-                Current Pilot Scope
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          <div className="lg:col-span-2 space-y-12">
+            <section aria-labelledby="scientific-rationale">
+              <h2 id="scientific-rationale" className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
+                <Microscope className="h-6 w-6 text-[#52B788]" aria-hidden="true" />
+                Scientific Rationale
               </h2>
-              <ul className="space-y-4">
+              <div className="prose prose-forest text-[#5B6472] max-w-none">
+                <p className="mb-6 leading-relaxed text-justify">
+                  Deforestation monitoring has historically been limited by a reactive paradigm—analyzing forest loss only after disturbance signals are detected by satellite sensors. This research introduces a predictive framework that integrates multi-source geospatial data to model the underlying environmental and anthropogenic pressures that precede actual forest loss.
+                </p>
+                <p className="leading-relaxed text-justify">
+                  By resampling diverse inputs—ranging from multispectral indices to topographic slope—into a unified 1 km analytical grid, the pipeline identifies spatial "hotspots" where the probability of near-term deforestation is statistically significant.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="empirical-focus">
+              <h2 id="empirical-focus" className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
+                <Globe className="h-6 w-6 text-[#52B788]" aria-hidden="true" />
+                Empirical Pilot: Gia Lai Province
+              </h2>
+              <p className="text-[#5B6472] leading-relaxed mb-6 text-justify">
+                Gia Lai Province provides a robust empirical setting for testing risk-modeling architectures. The region exhibits high heterogeneity in forest types and land-use intensity, offering a comprehensive dataset for cross-district validation.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 <div className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#D9E2DC]">
+                    <h3 className="font-bold text-[#12372A] mb-2 uppercase text-[10px] tracking-widest">K’Bang District</h3>
+                    <p className="text-xs text-[#5B6472]">A critical site for modeling risks to primary forest cover and existing protected area boundaries.</p>
+                 </div>
+                 <div className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#D9E2DC]">
+                    <h3 className="font-bold text-[#12372A] mb-2 uppercase text-[10px] tracking-widest">Mang Yang District</h3>
+                    <p className="text-xs text-[#5B6472]">Enables the assessment of model sensitivity to infrastructure-driven disturbances and rapid land conversion.</p>
+                 </div>
+              </div>
+            </section>
+          </div>
+
+          <aside className="space-y-8">
+            <div className="bg-[#12372A] p-8 rounded-3xl text-white shadow-xl">
+               <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                 <ShieldCheck className="h-5 w-5 text-[#52B788]" aria-hidden="true" />
+                 Analytical Scope
+               </h2>
+               <ul className="space-y-4">
                 {[
-                  'K’Bang District (Gia Lai Province)',
-                  'Mang Yang District (Gia Lai Province)',
-                  '1 km resolution spatial grid analysis',
-                  'Integration of 5 core public datasets',
-                  'Interpretable ML model evaluations (LogReg vs RF)'
+                  '1 km² resolution spatial resolution',
+                  'Multi-temporal spectral indices',
+                  'Anthropogenic pressure features',
+                  'Topographic terrain difficulty',
+                  'Historical loss label engineering'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="h-6 w-6 rounded-full bg-[#12372A] text-[#52B788] flex items-center justify-center flex-shrink-0 text-xs font-bold" aria-hidden="true">✓</div>
-                    <span className="text-[#1F2933] font-medium">{item}</span>
+                  <li key={i} className="flex items-start gap-3 border-b border-white/10 pb-3 last:border-0">
+                    <span className="text-[#52B788] text-xs font-bold mt-1">0{i+1}</span>
+                    <span className="text-sm font-medium text-[#D9E2DC]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="border-t lg:border-t-0 lg:border-l border-[#D9E2DC] pt-8 lg:pt-0 lg:pl-12">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#12372A]">
-                <TrendingUp className="h-8 w-8 text-[#52B788]" aria-hidden="true" />
-                Future National Scaling
-              </h2>
-              <p className="text-[#5B6472] mb-6 leading-relaxed">
-                The methodology is engineered to be scalable. Future expansion phases aim to cover broader geographical regions across Vietnam:
-              </p>
-              <ul className="space-y-4">
-                {[
-                  'Full Gia Lai Province coverage',
-                  'Expansion to neighboring Central Highland provinces',
-                  'Incorporation of CHIRPS rainfall and population density data',
-                  'Near-real-time (30-day) alert window integration',
-                  'National-scale high-performance computing deployment'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="h-6 w-6 rounded-full bg-[#E8F0ED] text-[#12372A] flex items-center justify-center flex-shrink-0 text-xs font-bold" aria-hidden="true">→</div>
-                    <span className="text-[#5B6472] italic">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="p-8 rounded-3xl bg-[#FAFAF7] border border-[#D9E2DC]">
+               <h2 className="text-sm font-bold text-[#12372A] uppercase tracking-[0.2em] mb-4">Implementation Note</h2>
+               <p className="text-xs text-[#5B6472] leading-relaxed italic">
+                 This project focuses exclusively on the scientific validation of the 1 km risk-prediction pipeline within the Gia Lai pilot region. Model outputs are intended for research prioritization and should be interpreted as probabilistic risk estimates.
+               </p>
             </div>
-          </div>
-        </section>
+          </aside>
+        </div>
 
-        <section className="text-center bg-[#12372A] text-white p-12 lg:p-16 rounded-[3rem] shadow-xl relative overflow-hidden" aria-label="Call to Action">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000')] bg-cover bg-center opacity-10" aria-hidden="true" />
-          <div className="relative z-10">
-            <h2 className="text-3xl font-serif font-bold mb-6 italic">“From Pilot to National Insight”</h2>
-            <p className="text-[#D9E2DC] max-w-2xl mx-auto mb-10 leading-relaxed text-lg">
-              This platform currently presents a pilot implementation for K’Bang and Mang Yang districts in Gia Lai Province. While the architecture is designed for scalability, current model outputs should be interpreted strictly within the context of this pilot study area.
+        <section className="bg-[#12372A] rounded-[3rem] p-12 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000')] bg-cover" aria-hidden="true" />
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-2xl font-serif font-bold mb-6">Advancing Open Geospatial Intelligence</h2>
+            <p className="text-[#D9E2DC] mb-10 leading-relaxed text-base">
+              The full research methodology, including feature importance rankings and model hyperparameter settings, is documented transparently in our technical publication.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/methodology" className="bg-[#52B788] text-[#12372A] px-10 py-4 rounded-xl font-bold hover:bg-white transition-all shadow-lg">
-                Review Our Methodology
+            <div className="flex justify-center gap-5">
+              <Link href="/methodology" className="bg-[#52B788] text-[#12372A] px-10 py-4 rounded-xl font-bold hover:bg-white transition-all no-underline shadow-lg">
+                Examine Methodology
               </Link>
             </div>
           </div>
