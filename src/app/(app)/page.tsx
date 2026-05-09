@@ -37,7 +37,7 @@ export default function Home() {
       <section className="bg-[#B42318] py-3 text-white border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-3 text-xs font-bold tracking-[0.1em] uppercase">
           <AlertCircle className="h-4 w-4" aria-hidden="true" />
-          <span>Validated for K’Bang & Mang Yang districts, Gia Lai Province (2023 Analysis)</span>
+          <span>Validated for K’Bang & Mang Yang districts, Gia Lai Province</span>
         </div>
       </section>
 
