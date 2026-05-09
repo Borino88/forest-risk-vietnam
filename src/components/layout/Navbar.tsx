@@ -21,7 +21,7 @@ export const Navbar = () => {
             <Link href="/results" className="text-[#5B6472] hover:text-[#12372A] font-medium">Results</Link>
             <Link href="/datasets" className="text-[#5B6472] hover:text-[#12372A] font-medium">Datasets</Link>
             <Link href="/publication" className="text-[#5B6472] hover:text-[#12372A] font-medium">Publication</Link>
-            <Link href="/admin" className="btn-primary">Explore Map</Link>
+            <Link href="/map" className="btn-primary">Explore Map</Link>
           </div>
           
           <div className="md:hidden">
